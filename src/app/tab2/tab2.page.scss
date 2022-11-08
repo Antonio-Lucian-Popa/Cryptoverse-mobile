@@ -1,0 +1,42 @@
+.container-crypto-list {
+  .container-title {
+    padding: 0 20px;
+    h2 {
+      margin-top: 0px!important;
+    }
+  }
+  .container-search {
+    padding: 0 20px;
+  }
+
+}
+
+.container-search {
+  ion-searchbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.container-crypt {
+  padding: 0 20px;
+  .container-cryptos {
+    .logo {
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      img {
+        width: 100%;
+      }
+    }
+    p {
+      margin: 0;
+    }
+    .right {
+      text-align: end;
+    }
+  }
+}
+
+

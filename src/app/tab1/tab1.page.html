@@ -1,17 +1,65 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Criptoverse
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="container-home">
+    <div class="container-title d-flex flex-column align-items-start mt-5">
+      <p>Hello, Antonio 👋</p>
+      <h2>Good Morning</h2>
+    </div>
+
+    <div class="container-slide mt-5">
+      <ion-slides [options]="sliderConfig">
+       <ion-slide *ngFor="let crypto of firstFourCrypto">
+        <ion-card>
+          <div class="container-card-title d-flex align-items-center justify-content-between">
+            <p>{{crypto.name}}</p>
+            <p>{{crypto.symbol}}</p>
+          </div>
+          <!-----Mini Chart------>
+          <div class="container-chart">
+            <!-- <canvas #lineCanvas style="position: relative; height:100%; width:100%"></canvas> -->
+            <app-chart [dataForChart]="crypto.sparkline" [configForChart]="lineChartMethod(crypto.sparkline)"></app-chart>
+          </div>
+          <!-----End Mini Chart------>
+          <div class="container-description d-flex align-items-center justify-content-between mt-3 mb-3">
+            <div class="container-image">
+              <img [src]="crypto.iconUrl" alt="">
+            </div>
+            <div class="info d-flex flex-column align-items-end">
+              <p>Daily Change</p>
+              <p>{{crypto.change}}%</p>
+            </div>
+          </div>
+          <ion-card-content class="mt-3">
+           <p class="daily">Price</p>
+           <p class="price">{{crypto.price | currency}}</p>
+          </ion-card-content>
+        </ion-card>
+       </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="container-top mt-5 mb-5">
+      <h2>Top 10 Cryptos In The World</h2>
+      <div class="container-cryptos d-flex align-items-center justify-content-between mt-4" *ngFor="let crypto of topTenCrypto">
+        <div class="left d-flex align-items-center">
+          <div class="logo">
+            <img [src]="crypto.iconUrl" alt="">
+          </div>
+          <p class="crypto-name">{{crypto.name}}</p>
+        </div>
+        <div class="right">
+          <p class="price">{{crypto.price | currency}}</p>
+          <p class="exchange" [ngStyle]="{'color': crypto.change.includes('-') ? 'red' : 'green' }">{{crypto.change}}%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </ion-content>

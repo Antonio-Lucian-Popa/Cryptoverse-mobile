@@ -1,0 +1,74 @@
+.container-home {
+  .container-title {
+    padding: 0 20px;
+    h2 {
+      margin-top: 0px!important;
+    }
+  }
+  .container-chart {
+    max-width: 96%;
+    height: 100px;
+  }
+}
+
+.container-card-title {
+  padding: 10px;
+  p {
+    color: #ffff;
+  }
+}
+.container-slide {
+  ion-card {
+    width: 250px!important;
+  }
+  ion-card-content {
+    background-color: #FFFFFF;
+  }
+  .container-description {
+    .container-image {
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .info {
+    padding: 0 10px;
+    p {
+      margin: 0px;
+    }
+  }
+
+  .daily {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+}
+
+.container-top {
+  padding: 0 20px;
+  .container-cryptos {
+    .logo {
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      img {
+        width: 100%;
+      }
+    }
+    p {
+      margin: 0;
+    }
+    .right {
+      text-align: end;
+    }
+  }
+}
+

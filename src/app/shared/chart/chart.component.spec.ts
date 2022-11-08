@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ExploreContainerComponent } from './explore-container.component';
+import { ChartComponent } from './chart.component';
 
-describe('ExploreContainerComponent', () => {
-  let component: ExploreContainerComponent;
-  let fixture: ComponentFixture<ExploreContainerComponent>;
+describe('ChartComponent', () => {
+  let component: ChartComponent;
+  let fixture: ComponentFixture<ChartComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExploreContainerComponent ],
+      declarations: [ ChartComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ExploreContainerComponent);
+    fixture = TestBed.createComponent(ChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
