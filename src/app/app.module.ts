@@ -1,3 +1,5 @@
+import { WelcomeSectionComponent } from './shared/welcome-section/welcome-section.component';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -8,11 +10,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgbModule, HttpClientModule],
+  declarations: [AppComponent, WelcomeSectionComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgbModule, HttpClientModule, SharedModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule {}

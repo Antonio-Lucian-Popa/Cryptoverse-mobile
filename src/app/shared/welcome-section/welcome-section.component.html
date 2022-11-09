@@ -1,0 +1,40 @@
+<div class="container-welcome h-100">
+  <ion-slides>
+    <ion-slide>
+      <div class="slide">
+        <img src="./assets/first-slide.png" />
+        <h2>Welcome To Cryptoverse</h2>
+        <p>
+          The purpose of this application is to help you stay updated with the latest news related to the crypto market.
+        </p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./slide-2.png" />
+      <h2>Stay up to date with prices!</h2>
+      <p>
+        Always be updated with current prices, you can see the performance of your favorite cryptocurrency on a graph,
+        which will illustrate its performance over time.
+      </p>
+    </ion-slide>
+
+    <ion-slide class="d-flex flex-column justify-content-between">
+      <img src="./slide-3.png" />
+      <h2>How does it work?</h2>
+      <p>
+        Well, all you have to do is register with your name and we will take care of the rest.
+      </p>
+      <div [formGroup]="userForm">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input placeholder="Ex..Andrew" formControlName="username"></ion-input>
+      </div>
+      <div class="container-button-register d-flex justify-content-end align-items-center w-100">
+        <ion-button fill="outline" class="mb-4" (click)="register()">
+          Register
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</div>

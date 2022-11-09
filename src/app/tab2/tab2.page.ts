@@ -35,6 +35,10 @@ export class Tab2Page implements OnInit {
     });
   }
 
+  onWillDismiss(event: Event) {
+    this.isCryptoDetailOpened = false;
+  }
+
   searchCrypto(wordToSearch: string): void {
     this.filteredCrypto = this.cryptos.filter(crypto => crypto.name.toLocaleLowerCase().includes(wordToSearch.toLocaleLowerCase())
     || crypto.symbol.toLocaleLowerCase().includes(wordToSearch.toLocaleLowerCase())
@@ -45,9 +49,12 @@ export class Tab2Page implements OnInit {
     }
   }
 
+
   openDialog(currentCrypto: any) {
-    this.isCryptoDetailOpened = true;
-    this.currentCrypto = currentCrypto;
+    this.coinService.getCryptoDetails(currentCrypto.uuid).subscribe(crypto => {
+      this.currentCrypto = crypto.data.coin;
+      this.isCryptoDetailOpened = true;
+    });
   }
 
   cancel() {

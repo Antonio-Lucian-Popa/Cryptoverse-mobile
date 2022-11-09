@@ -1,4 +1,3 @@
-import { ChartComponent } from './../shared/chart/chart.component';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
-import { NgChartsModule } from 'ng2-charts';
+import { SharedModule } from '../shared/shared/shared.module';
+import { ChartComponent } from '../shared/chart/chart.component';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { NgChartsModule } from 'ng2-charts';
     CommonModule,
     FormsModule,
     Tab1PageRoutingModule,
-    NgChartsModule
+    SharedModule
   ],
-  declarations: [Tab1Page, ChartComponent]
+  declarations: [Tab1Page]
 })
 export class Tab1PageModule {}

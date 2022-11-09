@@ -12,7 +12,7 @@
       <h2>Cryptocurrencies</h2>
     </div>
     <div class="container-search" [formGroup]="userForm">
-      <ion-searchbar  placeholder="Search crypto..." formControlName="searchWord"></ion-searchbar>
+      <ion-searchbar placeholder="Search crypto..." formControlName="searchWord"></ion-searchbar>
     </div>
     <div class="container-crypt mt-5 mb-5">
       <div class="container-cryptos d-flex align-items-center justify-content-between mt-4"
@@ -32,22 +32,45 @@
     </div>
   </div>
 
-  <ion-modal [isOpen]="isCryptoDetailOpened" [breakpoints]="[0.5]" [initialBreakpoint]="0.5">
+  <ion-modal [isOpen]="isCryptoDetailOpened" (willDismiss)="onWillDismiss($event)" [breakpoints]="[0.9]" [initialBreakpoint]="0.9">
     <ng-template>
       <ion-content class="ion-padding">
-        <div class="top">
-          <div class="container-cryptos d-flex align-items-center justify-content-between mt-4">
-            <div class="left d-flex align-items-center">
-              <div class="logo">
-                <img [src]="currentCrypto.iconUrl" alt="">
+        <div class="container-modal-details">
+          <div class="top">
+            <div class="container-cryptos-modal d-flex align-items-center justify-content-between mt-4">
+              <div class="left d-flex align-items-center">
+                <div class="logo">
+                  <img [src]="currentCrypto.iconUrl" alt="">
+                </div>
+                <p class="crypto-name">{{currentCrypto.name}}</p>
               </div>
-              <p class="crypto-name">{{currentCrypto.name}}</p>
+              <div class="right">
+                <p class="price">{{currentCrypto.price | currency}}</p>
+                <p class="exchange" [ngStyle]="{'color': currentCrypto.change.includes('-') ? 'red' : 'green' }">
+                  {{currentCrypto.change}}%</p>
+              </div>
             </div>
-            <div class="right">
-              <p class="price">{{currentCrypto.price | currency}}</p>
-              <p class="exchange" [ngStyle]="{'color': currentCrypto.change.includes('-') ? 'red' : 'green' }">
-                {{currentCrypto.change}}%</p>
+          </div>
+          <div class="line mt-4 mb-4"></div>
+          <div class="details-modal d-flex align-items-center justify-content-between">
+            <div class="detail">
+              <p class="title-detail">Market Cup</p>
+              <p>{{currentCrypto.marketCap | currency:'USD':'symbol':'4.2-2'}}</p>
             </div>
+            <div class="detail">
+              <p class="title-detail">Number Of Exchanges</p>
+              <p>{{currentCrypto.numberOfExchanges}}</p>
+            </div>
+            <div class="detail">
+              <p class="title-detail">Number Of Markets</p>
+              <p>{{currentCrypto.numberOfMarkets}}</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <app-chart [dataForChart]="currentCrypto.sparkline"></app-chart>
+          </div>
+          <h3 class="description-title">What is {{currentCrypto.name}}?</h3>
+          <div class="description-of-crypto" [innerHTML]="currentCrypto.description">
           </div>
         </div>
       </ion-content>
