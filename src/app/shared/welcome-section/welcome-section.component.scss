@@ -39,3 +39,24 @@ p b {
 .container-button-register {
   margin-right: 60px;
 }
+
+.third-slide-container {
+  h2 {
+    margin-top: 0;
+  }
+
+  .third-slide-image {
+    width: 270px;
+  }
+}
+
+.container-button-register {
+  button {
+    background: transparent;
+    color: black;
+
+    ion-icon {
+      font-size: 25px;
+    }
+  }
+}

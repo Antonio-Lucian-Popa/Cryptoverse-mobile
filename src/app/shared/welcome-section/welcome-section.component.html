@@ -11,7 +11,7 @@
     </ion-slide>
 
     <ion-slide>
-      <img src="./slide-2.png" />
+      <img src="./assets/second-slide.png" />
       <h2>Stay up to date with prices!</h2>
       <p>
         Always be updated with current prices, you can see the performance of your favorite cryptocurrency on a graph,
@@ -19,8 +19,8 @@
       </p>
     </ion-slide>
 
-    <ion-slide class="d-flex flex-column justify-content-between">
-      <img src="./slide-3.png" />
+    <ion-slide class="third-slide-container d-flex flex-column justify-content-between">
+      <img class="third-slide-image" src="./assets/third-slide.png" />
       <h2>How does it work?</h2>
       <p>
         Well, all you have to do is register with your name and we will take care of the rest.
@@ -30,10 +30,10 @@
         <ion-input placeholder="Ex..Andrew" formControlName="username"></ion-input>
       </div>
       <div class="container-button-register d-flex justify-content-end align-items-center w-100">
-        <ion-button fill="outline" class="mb-4" (click)="register()">
+        <button class="d-flex mb-3" (click)="register()">
           Register
           <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
-        </ion-button>
+        </button>
       </div>
     </ion-slide>
   </ion-slides>

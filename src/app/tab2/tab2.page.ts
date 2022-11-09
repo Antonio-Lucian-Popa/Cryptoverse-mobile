@@ -23,12 +23,15 @@ export class Tab2Page implements OnInit {
 
   filteredCrypto: any[] = [];
 
+  isDataLoaded = false;
+
   constructor(private coinService: CoinService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.coinService.getCryptos(100).subscribe(res => {
       this.cryptos = res.data.coins;
       this.filteredCrypto = res.data.coins;
+      this.isDataLoaded = true;
     });
     this.userForm.get('searchWord').valueChanges.subscribe(word => {
       this.searchCrypto(word);

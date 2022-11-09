@@ -1,0 +1,29 @@
+ion-modal {
+  --ion-background-color: #ffff;
+}
+
+.container-modal-details {
+  color: black;
+
+  ion-input {
+    margin-top: 10px;
+    background: #e9e9e9;
+  }
+}
+
+ion-icon {
+  font-size: 25px;
+}
+
+.container-button-register {
+  button {
+    background: green;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 2px;
+  }
+}
+
+.container-form {
+  margin-top: 20px;
+}

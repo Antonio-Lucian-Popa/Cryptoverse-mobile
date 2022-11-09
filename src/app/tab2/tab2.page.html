@@ -7,6 +7,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+  <div *ngIf="!isDataLoaded" class="container-loader d-flex align-items-center justify-content-center">
+    <span class="loader"></span>
+  </div>
+
   <div class="container-crypto-list">
     <div class="container-title d-flex flex-column align-items-start mt-5">
       <h2>Cryptocurrencies</h2>
