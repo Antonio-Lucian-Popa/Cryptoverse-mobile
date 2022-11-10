@@ -14,7 +14,7 @@
 
   <div class="container-home">
     <div class="container-title d-flex flex-column align-items-start mt-5">
-      <p>Hello, {{username}} 👋</p>
+      <p>Hello, {{username | titlecase}} 👋</p>
       <h2>{{messageForUser}}</h2>
     </div>
 
@@ -28,8 +28,7 @@
           </div>
           <!-----Mini Chart------>
           <div class="container-chart">
-            <!-- <canvas #lineCanvas style="position: relative; height:100%; width:100%"></canvas> -->
-            <app-chart [dataForChart]="crypto.sparkline" [lineColor]="'white'"></app-chart>
+            <app-chart [dataForChart]="crypto.sparkline" [lineColor]="'white'" [scaleYVisible]="false"></app-chart>
           </div>
           <!-----End Mini Chart------>
           <div class="container-description d-flex align-items-center justify-content-between mt-3 mb-3">
@@ -38,7 +37,7 @@
             </div>
             <div class="info d-flex flex-column align-items-end">
               <p>Daily Change</p>
-              <p>{{crypto.change}}%</p>
+              <p class="daily-value">{{crypto.change}}%</p>
             </div>
           </div>
           <ion-card-content class="container-price-card mt-3">

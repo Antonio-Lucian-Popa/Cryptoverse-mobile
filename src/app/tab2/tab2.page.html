@@ -60,7 +60,7 @@
           <div class="details-modal d-flex align-items-center justify-content-between">
             <div class="detail">
               <p class="title-detail">Market Cup</p>
-              <p>{{currentCrypto.marketCap | currency:'USD':'symbol':'4.2-2'}}</p>
+              <p>${{currentCrypto.marketCap| shortNumber}}</p>
             </div>
             <div class="detail">
               <p class="title-detail">Number Of Exchanges</p>
@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="chart-container">
-            <app-chart [dataForChart]="currentCrypto.sparkline"></app-chart>
+            <app-chart [dataForChart]="currentCrypto.sparkline" [scaleYVisible]="true"></app-chart>
           </div>
           <h3 class="description-title">What is {{currentCrypto.name}}?</h3>
           <div class="description-of-crypto" [innerHTML]="currentCrypto.description">

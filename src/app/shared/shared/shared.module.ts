@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from '../chart/chart.component';
+import { ShortNumberPipe } from '../pipes/shortNumber.pipe';
 
 
 const NB_MODULES = [
@@ -10,7 +11,8 @@ const NB_MODULES = [
   ReactiveFormsModule
 ];
 const COMPONENTS = [
-  ChartComponent
+  ChartComponent,
+  ShortNumberPipe
 ];
 
 @NgModule({

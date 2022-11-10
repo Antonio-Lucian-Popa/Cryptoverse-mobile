@@ -24,6 +24,7 @@ export class Tab2Page implements OnInit {
   filteredCrypto: any[] = [];
 
   isDataLoaded = false;
+  formatter = Intl.NumberFormat('en');
 
   constructor(private coinService: CoinService, private fb: FormBuilder) {}
 

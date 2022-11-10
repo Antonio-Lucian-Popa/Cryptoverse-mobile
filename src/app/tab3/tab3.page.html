@@ -7,15 +7,25 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item>
-    <ion-label>
-      <p>Username</p>
-      <div class="d-flex align-items-center justify-content-between">
-        <p>{{username}}</p>
-        <ion-icon name="create-outline" (click)="openEditDialog()"></ion-icon>
-      </div>
-    </ion-label>
-  </ion-item>
+
+  <div class="option d-flex align-items-center justify-content-start" (click)="openEditDialog()">
+    <div class="container-icon edit-app d-flex align-items-center justify-content-center">
+      <ion-icon name="create-outline"></ion-icon>
+    </div>
+    <span class="label-location">Edit Username</span>
+  </div>
+
+  <div class="w-100 d-flex align-items-center justify-content-center mt-3">
+    <div class="line"></div>
+  </div>
+
+  <div class="option d-flex align-items-center justify-content-start" (click)="openInfoModal()">
+    <div class="container-icon info-app d-flex align-items-center justify-content-center">
+      <ion-icon name="information-outline"></ion-icon>
+    </div>
+    <span class="label-location">Info App</span>
+  </div>
+
 
   <ion-modal [isOpen]="isEditDialogOpened" (willDismiss)="onWillDismiss($event)" [breakpoints]="[0.5]"
     [initialBreakpoint]="0.5">
@@ -26,13 +36,40 @@
             <ion-label class="mb-3" position="floating">Username</ion-label>
             <ion-input placeholder="Ex..Andrew" formControlName="username"></ion-input>
           </div>
-          <div class="container-button-register d-flex justify-content-end align-items-center w-100">
-            <button class="d-flex align-items-center justify-content-center mb-3" (click)="update()">
-              Save
-            </button>
+          <div class="actions d-flex align-items-center justify-content-end mt-5 mb-4">
+            <button class="btn-delete" (click)="closeEditDialog()">Close</button>
+            <button class="btn-save" (click)="update()">Save</button>
           </div>
         </div>
       </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal class="container-info" [isOpen]="isModalInfoOpened" (willDismiss)="onWillDismissInfo($event)" [breakpoints]="[0.5]" [initialBreakpoint]="0.5">
+    <ng-template>
+
+      <div class="information d-flex flex-column align-items-start justify-content-center mt-5">
+        <ion-label>
+          Application Version
+        </ion-label>
+        <ion-label>
+          0.0.1
+        </ion-label>
+      </div>
+
+      <div class="w-100 d-flex align-items-center justify-content-center mt-3">
+        <div class="line info-line"></div>
+      </div>
+
+      <div class="information d-flex flex-column align-items-start justify-content-center mt-3">
+        <ion-label>
+          Legal Information
+        </ion-label>
+        <ion-label>
+          Copyright 2022 Asu Software, All right reserved
+        </ion-label>
+      </div>
+
     </ng-template>
   </ion-modal>
 

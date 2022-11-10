@@ -11,12 +11,11 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared/shared.module';
-import { AuthInterceptorProvider } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent, WelcomeSectionComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgbModule, HttpClientModule, SharedModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AuthInterceptorProvider,],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },],
   bootstrap: [AppComponent],
   exports: []
 })

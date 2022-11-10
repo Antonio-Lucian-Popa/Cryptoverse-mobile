@@ -61,8 +61,6 @@ export class Tab1Page implements OnInit {
       });
 
       this.userService.usernameChanged.subscribe(username => this.username = username);
-    } else {
-      this.router.navigate(['/welcome']);
     }
   }
 

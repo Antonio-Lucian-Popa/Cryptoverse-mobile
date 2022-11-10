@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class Tab3Page implements OnInit {
 
   isEditDialogOpened = false;
+  isModalInfoOpened = false;
   username = '';
 
   userForm = this.fb.group({
@@ -27,16 +28,32 @@ export class Tab3Page implements OnInit {
     this.isEditDialogOpened = false;
   }
 
+  onWillDismissInfo(event: Event) {
+    this.isModalInfoOpened = false;
+  }
+
   openEditDialog(): void {
     this.isEditDialogOpened = true;
+  }
+
+  closeEditDialog(): void {
+    this.isEditDialogOpened = false;
   }
 
   update(): void {
     if(this.userForm.valid) {
       this.userService.saveUsername(this.userForm.get('username').value);
-      this.username = this.userForm.get('username').value;
+      this.username = this.userService.capitalizeFirstLetter(this.userForm.get('username').value);
       this.isEditDialogOpened = false;
     }
   }
+
+  openInfoModal() {
+    this.isModalInfoOpened = true;
+   }
+
+   dismissInfoModal() {
+     this.isModalInfoOpened = false;
+   }
 
 }

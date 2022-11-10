@@ -27,3 +27,56 @@ ion-icon {
 .container-form {
   margin-top: 20px;
 }
+
+.option {
+  padding-left: 10px;
+  margin-top: 20px;
+  .container-icon {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    ion-icon {
+      font-size: 25px;
+      color: white;
+    }
+  }
+}
+
+.line {
+  width: 94%;
+  height: 1px;
+  background-color: #4a4a4a;
+}
+
+.edit-app {
+  background-color: #21979b;
+}
+
+.info-app {
+  background-color: #1d581d;
+}
+
+.information {
+  margin-left: 10px;
+}
+
+
+.actions {
+  .btn-delete {
+    margin-right: 10px;
+    padding: 13px 20px;
+    border-radius: 5px;
+    background-color: #f05454;
+    color: white;
+  }
+  .btn-save {
+    padding: 13px 20px;
+    border-radius: 5px;
+    background-color: #107f10;
+  }
+}
+
+.info-line {
+  background-color: #dbdbdb!important;
+}

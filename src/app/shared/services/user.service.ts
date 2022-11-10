@@ -10,7 +10,7 @@ export class UserService {
   constructor() { }
 
   saveUsername(username: string): void {
-    localStorage.setItem('username', username);
+    localStorage.setItem('username', this.capitalizeFirstLetter(username));
     this.usernameChanged.emit(username);
   }
 
@@ -20,5 +20,9 @@ export class UserService {
 
   removeUsername(): void {
     localStorage.removeItem('username');
+  }
+
+  capitalizeFirstLetter(value: string): string {
+    return value.charAt(0).toUpperCase() + value.slice(1);
   }
 }

@@ -15,6 +15,7 @@ export class ChartComponent implements OnInit, AfterViewInit, AfterContentChecke
   @Input() dataForChart: any[] = [];
   @Input() configForChart: any;
   @Input() lineColor?: string;
+  @Input() scaleYVisible = false;
 
 
   public chartData: ChartDataset[] = [
@@ -62,7 +63,7 @@ export class ChartComponent implements OnInit, AfterViewInit, AfterContentChecke
   generateChart() {
     this.chartData[0].data = this.dataForChart;
     this.chartData[0].borderColor = this.lineColor ? this.lineColor : 'red';
-    console.log(this.chartData[0].data);
+    this.chartOptions.scales.y.display = this.scaleYVisible;
   }
 
   generateLabels() {
