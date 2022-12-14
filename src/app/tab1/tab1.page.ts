@@ -57,7 +57,6 @@ export class Tab1Page implements OnInit {
         this.firstFourCrypto = this.cryptos.slice(0, 4);
         this.topTenCrypto = this.cryptos.slice(0, 10);
         this.isDataLoaded = true;
-        console.log(this.firstFourCrypto);
       });
 
       this.userService.usernameChanged.subscribe(username => this.username = username);

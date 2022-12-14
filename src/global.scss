@@ -34,3 +34,25 @@ ion-title {
     height: auto!important;
   }
 }
+
+
+@media (prefers-color-scheme: light) {
+
+  .info {
+    .daily-value {
+      color: #000000!important;
+    }
+  }
+  // loader
+.container-loader {
+  background-color: white!important;
+}
+
+.btn-save {
+  color: white!important;
+}
+
+.line {
+  background-color: #dddddd!important;
+}
+}

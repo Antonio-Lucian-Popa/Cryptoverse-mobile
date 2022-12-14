@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Cryptoverse</string>
+    <string name="title_activity_main">Cryptoverse</string>
+    <string name="package_name">com.asusoftware.cryptoverse</string>
+    <string name="custom_url_scheme">com.asusoftware.cryptoverse</string>
+</resources>

@@ -39,7 +39,7 @@
 
   <ion-modal [isOpen]="isCryptoDetailOpened" (willDismiss)="onWillDismiss($event)" [breakpoints]="[0.9]" [initialBreakpoint]="0.9">
     <ng-template>
-      <ion-content class="ion-padding">
+      <ion-content class="ion-padding" (touchmove)="stopScrolling($event)">
         <div class="container-modal-details">
           <div class="top">
             <div class="container-cryptos-modal d-flex align-items-center justify-content-between mt-4">

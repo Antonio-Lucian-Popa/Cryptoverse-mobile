@@ -43,11 +43,14 @@ export class Tab2Page implements OnInit {
     this.isCryptoDetailOpened = false;
   }
 
+  stopScrolling(event: any): void {
+    event.stopPropagation();
+  }
+
   searchCrypto(wordToSearch: string): void {
     this.filteredCrypto = this.cryptos.filter(crypto => crypto.name.toLocaleLowerCase().includes(wordToSearch.toLocaleLowerCase())
     || crypto.symbol.toLocaleLowerCase().includes(wordToSearch.toLocaleLowerCase())
     );
-    console.log(this.filteredCrypto);
     if(!wordToSearch) {
       this.filteredCrypto = this.cryptos;
     }

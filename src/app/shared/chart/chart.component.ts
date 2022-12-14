@@ -50,7 +50,10 @@ export class ChartComponent implements OnInit, AfterViewInit, AfterContentChecke
   public chartLabels: string[] = [];
   public chartType: ChartType  = 'line';
 
+  isThemeLight;
+
   constructor(private cdref: ChangeDetectorRef) {
+    this.isThemeLight = window.matchMedia('(prefers-color-scheme: light)');
   }
 
   ngOnInit() {
@@ -62,7 +65,11 @@ export class ChartComponent implements OnInit, AfterViewInit, AfterContentChecke
 
   generateChart() {
     this.chartData[0].data = this.dataForChart;
-    this.chartData[0].borderColor = this.lineColor ? this.lineColor : 'red';
+    if(this.isThemeLight.matches) {
+      this.chartData[0].borderColor = 'red';
+    } else {
+      this.chartData[0].borderColor = this.lineColor ? this.lineColor : 'red';
+    }
     this.chartOptions.scales.y.display = this.scaleYVisible;
   }
 
